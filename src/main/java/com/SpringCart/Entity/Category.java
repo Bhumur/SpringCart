@@ -9,15 +9,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.Data;
 
 @Entity
+@Data
 @Table(name="category")
 public class Category {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int categoryId;
-	@Column(name="categoryName")
-	String categoryName;
+	@Column(name="name")
+	String name;
 	@Column(name="categoryDiscription")
 	String categoryDiscription;
 	@Column(name="categoryImg")
@@ -25,48 +27,4 @@ public class Category {
 	
 	@OneToMany(mappedBy = "category")
 	Set<Product> products;
-	public Category() {}
-	public Category(int categoryId, String categoryName, String categoryDiscription, String categoryImg) {
-		super();
-		this.categoryId = categoryId;
-		this.categoryName = categoryName;
-		this.categoryDiscription = categoryDiscription;
-		this.categoryImg = categoryImg;
-	}
-	public int getCategoryId() {
-		return categoryId;
-	}
-	public void setCategoryId(int categoryId) {
-		this.categoryId = categoryId;
-	}
-	public String getCategoryName() {
-		return categoryName;
-	}
-	public void setCategoryName(String categoryName) {
-		this.categoryName = categoryName;
-	}
-	public String getCategoryDiscription() {
-		return categoryDiscription;
-	}
-	public void setCategoryDiscription(String categoryDiscription) {
-		this.categoryDiscription = categoryDiscription;
-	}
-	public String getCategoryImg() {
-		return categoryImg;
-	}
-	public void setCategoryImg(String categoryImg) {
-		this.categoryImg = categoryImg;
-	}
-	public Set<Product> getProducts() {
-		return products;
-	}
-	public void setProducts(Set<Product> products) {
-		this.products = products;
-	}
-	@Override
-	public String toString() {
-		return "Category [categoryId=" + categoryId + ", categoryName=" + categoryName + ", categoryDiscription="
-				+ categoryDiscription + ", categoryImg=" + categoryImg + ", products=" + products + "]";
-	}
-	
 }

@@ -29,7 +29,7 @@ public class UserController {
 		
 		@PostMapping("/login")
 		public String loginRequest(@ModelAttribute LoginUser loginUser, Model model) {
-		
+			System.out.println(loginUser.getUsernameOrEmail());
 			User u = userService.getUserByEmail(loginUser.getUsernameOrEmail());
 			if(u==null) {
 				u = userService.getUserByUsername(loginUser.getUsernameOrEmail());
@@ -39,11 +39,14 @@ public class UserController {
 		        return "login";
 			}
 			if(loginUser.getPassword().equals(u.getPassword())) {
-				return "category";
+				if(loginUser.getUsernameOrEmail().contains("admin"))
+					return "admin";
+				else
+					return "redirect:/categories";
 			}
 			else {
 				 model.addAttribute("error", "Incorrect Password");
-				return "login";
+				 return "login";
 			}
 				
 		}

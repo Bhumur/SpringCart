@@ -178,70 +178,349 @@ body {
     padding: 15px;
     margin-top: 30px;
 }
+
 /* Login Page */
 .login-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+    min-height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px 20px;
-    background: #f9f9f9;
 }
 
 .login-container {
     background: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    width: 350px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    max-width: 450px;
+    width: 100%;
     text-align: center;
 }
 
-.login-container h2 {
-    margin-bottom: 20px;
+.login-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
     color: #333;
 }
 
-.login-form .form-group {
-    margin-bottom: 15px;
+.login-subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.login-form {
     text-align: left;
 }
 
-.login-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-.login-form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
-.login-form input:focus {
-    border-color: #ff9800;
-    outline: none;
-}
-
-.login-form .btn {
-    width: 100%;
-    margin-top: 10px;
-}
-
 .register-link {
-    margin-top: 15px;
-    font-size: 0.9rem;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
 }
 
 .register-link a {
-    color: #ff9800;
+    color: #007bff;
     text-decoration: none;
     font-weight: bold;
 }
 
 .register-link a:hover {
     text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Register Page */
+.register-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-container {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.register-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.register-subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.register-form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #444;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    transition: border 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+}
+
+textarea {
+    resize: none;
+}
+
+.btn-submit {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #0056b3;
+}
+
+.login-link {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Dashboard */
+.admin-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.admin-container {
+    max-width: 1000px;
+    width: 100%;
+    text-align: center;
+}
+
+.admin-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.admin-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.admin-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.admin-card h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #007bff;
+}
+
+.admin-card p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.admin-card .btn {
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.admin-card .btn:hover {
+    background: #0056b3;
+}
+
+/* Generic Form Pages (Category, Products) */
+.form-section {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.form-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 95%;
+    max-width: 1000px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.actions {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.styled-table th, 
+.styled-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.styled-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+.btn-edit {
+    color: #28a745;
+    margin-right: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-delete {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: bold;
+}
+.form-container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
 }

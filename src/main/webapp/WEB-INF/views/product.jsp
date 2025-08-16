@@ -1,12 +1,16 @@
 <%@ include file="header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<section class="section">
-    <div class="container">
-        <h2>All Products</h2>
+<section class="form-section">
+    <div class="form-container">
+        <h2 class="form-title">All Products</h2>
 
-        <a href="${pageContext.request.contextPath}/products/new" class="btn">+ Add New Product</a>
+        <div class="actions">
+            <a href="${pageContext.request.contextPath}/products/new" class="btn-submit">+ Add New Product</a>
+        </div>
 
-        <table class="table">
+        <!-- Products Table -->
+        <table class="styled-table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -22,12 +26,12 @@
                     <tr>
                         <td>${product.productid}</td>
                         <td>${product.productsName}</td>
-                        <td>${product.productsPrice}</td>
+                        <td>₹ ${product.productsPrice}</td>
                         <td>${product.productQuantity}</td>
                         <td>${product.category.categoryName}</td>
                         <td>
-                            <a href="${pageContext.request.contextPath}/products/edit/${product.productid}" class="btn">Edit</a>
-                            <a href="${pageContext.request.contextPath}/products/delete/${product.productid}" class="btn btn-danger">Delete</a>
+                            <a href="${pageContext.request.contextPath}/products/edit/${product.productid}" class="btn-edit">Edit</a>
+                            <a href="${pageContext.request.contextPath}/products/delete/${product.productid}" class="btn-delete">Delete</a>
                         </td>
                     </tr>
                 </c:forEach>
