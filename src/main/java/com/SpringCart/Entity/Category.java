@@ -24,7 +24,4 @@ public class Category {
 	String categoryDiscription;
 	@Column(name="categoryImg")
 	String categoryImg;
-	
-	@OneToMany(mappedBy = "category")
-	Set<Product> products;
 }

@@ -27,7 +27,6 @@ public class CategoryServiceImpl implements CategoryService {
 			result.setCategoryName(resultCategory.getName());
 			result.setCategoryDiscription(resultCategory.getCategoryDiscription());
 			result.setCategoryImg(resultCategory.getCategoryImg());
-			result.setProducts(resultCategory.getProducts());
 			return result;
 		}
 		return null;
@@ -42,7 +41,6 @@ public class CategoryServiceImpl implements CategoryService {
 			result.setCategoryName(resultCategory.getName());
 			result.setCategoryDiscription(resultCategory.getCategoryDiscription());
 			result.setCategoryImg(resultCategory.getCategoryImg());
-			result.setProducts(resultCategory.getProducts());
 			return result;
 		}
 		return null;

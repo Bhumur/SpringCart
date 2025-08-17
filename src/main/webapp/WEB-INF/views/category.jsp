@@ -77,7 +77,7 @@
                          alt="<%= cat.getCategoryName() %>">
                     <h3><%= cat.getCategoryName() %></h3>
                     <p><%= cat.getCategoryDiscription() %></p>
-                    <a class="btn" href="<%= request.getContextPath() %>/products/<%= cat.getCategoryId() %>">
+                    <a class="btn" href="<%= request.getContextPath() %>/product/<%= cat.getCategoryId() %>">
                         View Products
                     </a>
                 </div>
