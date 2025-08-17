@@ -12,67 +12,73 @@ import com.SpringCart.Entity.User;
 import com.SpringCart.Repositry.UserRepository;
 import com.SpringCart.Service.UserServiceImpl;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
-//@RequestMapping("/user")
 public class UserController {
 
-		@Autowired
-		UserServiceImpl userService;
-		
-		@Autowired
-		UserRepository userRepository;
-	
-		@GetMapping("/login")
-		public String login() {
-		    return "login";
-		}
-		
-		@PostMapping("/login")
-		public String loginRequest(@ModelAttribute LoginUser loginUser, Model model) {
-			System.out.println(loginUser.getUsernameOrEmail());
-			User u = userService.getUserByEmail(loginUser.getUsernameOrEmail());
-			if(u==null) {
-				u = userService.getUserByUsername(loginUser.getUsernameOrEmail());
-			}
-			if(u==null) {
-		        model.addAttribute("error", "User Not Exist");
-		        return "login";
-			}
-			if(loginUser.getPassword().equals(u.getPassword())) {
-				if(loginUser.getUsernameOrEmail().contains("admin"))
-					return "admin";
-				else
-					return "redirect:/categories";
-			}
-			else {
-				 model.addAttribute("error", "Incorrect Password");
-				 return "login";
-			}
-				
-		}
-		
-		@GetMapping("/register")
-		public String register() {
-		    return "register";
-		}
-		
-		@PostMapping("/register")
-		public String registerUser(@ModelAttribute User user, Model model) {
-		    try {
-		    	
-		    	if(userService.checkEmailExists(user.getEmail()) || userService.checkUsernameExists(user.getUsername())) {
-		            model.addAttribute("error", "Email or Username already taken!");
-		            return "register";
-		        }
-		        userRepository.save(user);
-		        model.addAttribute("success", "Registration successful! Please login.");
-		        return "login";
+    @Autowired
+    UserServiceImpl userService;
 
-		    } catch (Exception e) {
-		        model.addAttribute("error", "Something went wrong. Try again!");
-		        return "register";
-		    }
-		}
+    @Autowired
+    UserRepository userRepository;
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 
+    @PostMapping("/login")
+    public String loginRequest(@ModelAttribute LoginUser loginUser, Model model, HttpSession session) {
+        System.out.println(loginUser.getUsernameOrEmail());
+        User u = userService.getUserByEmail(loginUser.getUsernameOrEmail());
+        if (u == null) {
+            u = userService.getUserByUsername(loginUser.getUsernameOrEmail());
+        }
+        if (u == null) {
+            model.addAttribute("error", "User Not Exist");
+            return "login";
+        }
+        if (loginUser.getPassword().equals(u.getPassword())) {
+            // Set user in session
+            session.setAttribute("loggedUser", u);
+
+            if (loginUser.getUsernameOrEmail().contains("admin")) {
+                return "admin";
+            } else {
+                return "redirect:/categories";
+            }
+        } else {
+            model.addAttribute("error", "Incorrect Password");
+            return "login";
+        }
+    }
+
+    @GetMapping("/register")
+    public String register() {
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String registerUser(@ModelAttribute User user, Model model) {
+        try {
+            if (userService.checkEmailExists(user.getEmail()) || userService.checkUsernameExists(user.getUsername())) {
+                model.addAttribute("error", "Email or Username already taken!");
+                return "register";
+            }
+            userRepository.save(user);
+            model.addAttribute("success", "Registration successful! Please login.");
+            return "login";
+
+        } catch (Exception e) {
+            model.addAttribute("error", "Something went wrong. Try again!");
+            return "register";
+        }
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
 }

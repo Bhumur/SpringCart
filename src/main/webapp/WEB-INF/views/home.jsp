@@ -13,20 +13,15 @@
 <!-- Categories Section -->
 <section class="categories">
     <h2>Shop by Category</h2>
-    <div class="category-container">
-        <div class="category-card">
-            <img src="/images/electronics.jpg" alt="Electronics">
-            <h3>Electronics</h3>
-        </div>
-        <div class="category-card">
-            <img src="/images/fashion.jpg" alt="Fashion">
-            <h3>Fashion</h3>
-        </div>
-        <div class="category-card">
-            <img src="/images/grocery.jpg" alt="Grocery">
-            <h3>Grocery</h3>
-        </div>
-    </div>
+    	<div class="category-container">
+    		<c:forEach var="category" items="${categories}">
+		    	<div class="category-card">
+		            <img src="/images/${category.categoryImg}" alt="Electronics">
+		            <h3>${category.categoryName}</h3>
+		            <h3>${category.categoryDiscription}</h3>
+		        </div>
+			</c:forEach>
+   		</div>
 </section>
 
 

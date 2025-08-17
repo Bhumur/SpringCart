@@ -14,16 +14,6 @@ public class CategoryController {
 	@Autowired 
 	CategoryServiceImpl categoryService;
 	
-	@GetMapping("/categoryForm/{id}")
-	public String categoryForm() {
-		return "categoryForm";
-	}
-	
-	@PostMapping("/categoryAdd")
-	public String categoryAdd(){
-		return "catgeoryList";
-	}
-	
 	@GetMapping("/categoryList")
 	public String categoryList() {
 		return "categoryList";
