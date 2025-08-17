@@ -1,71 +1,72 @@
-# SpringCart
-🛒 SpringCart
+<div align="center">
+  <h1>🛒 SpringCart</h1>
+  <p>
+    SpringCart is a <b>simple E-commerce web application</b> built using 
+    <b>Spring Boot, Spring MVC, JSP, Hibernate (JPA), and H2 Database</b>.
+  </p>
+  <p>
+    It allows <b>Admin</b> to manage categories and products, and 
+    <b>Users</b> to register, login, and view products.
+  </p>
+</div>
 
-SpringCart is a simple E-commerce web application built using Spring Boot, Spring MVC, JSP, Hibernate (JPA), and H2 Database.
-It allows Admin to manage categories and products, and Users to register, login, and view products.
+<hr/>
 
-📌 Features
-👨‍💼 Admin
+<h2>📌 Features</h2>
 
-Add, Edit, Delete Categories
+<h3>👨‍💼 Admin</h3>
+<ul>
+  <li>Add, Edit, Delete Categories</li>
+  <li>Add, Edit, Delete Products</li>
+  <li>View all products with categories</li>
+</ul>
 
-Add, Edit, Delete Products
+<h3>👤 User</h3>
+<ul>
+  <li>Register with email/username</li>
+  <li>Login using email or username</li>
+  <li>View product catalog</li>
+</ul>
 
-View all products with categories
+<hr/>
 
-👤 User
+<h2>🛠️ Tech Stack</h2>
+<ul>
+  <li><b>Backend:</b> Spring Boot, Spring MVC, Spring Data JPA</li>
+  <li><b>Frontend:</b> JSP, JSTL, CSS</li>
+  <li><b>Database:</b> H2 (in-memory, auto-configured)</li>
+  <li><b>Build Tool:</b> Maven</li>
+</ul>
 
-Register with email/username
+<hr/>
 
-Login using email or username
+<h2>⚙️ Installation & Setup</h2>
+<ol>
+  <li><b>Clone the repository</b>
+    <pre><code>git clone https://github.com/your-username/SpringCart.git
+cd SpringCart</code></pre>
+  </li>
+  <li><b>Build the project using Maven</b>
+    <pre><code>mvn clean install</code></pre>
+  </li>
+  <li><b>Run the application</b>
+    <pre><code>mvn spring-boot:run</code></pre>
+  </li>
+  <li><b>Access the app</b>
+    <ul>
+      <li>Open browser → <a href="http://localhost:8080">http://localhost:8080</a></li>
+      <li>H2 Console → <a href="http://localhost:8080/h2-console">http://localhost:8080/h2-console</a></li>
+      <li>JDBC URL: <code>jdbc:h2:mem:testdb</code></li>
+      <li>Username: <code>sa</code></li>
+      <li>Password: (leave blank)</li>
+    </ul>
+  </li>
+</ol>
 
-View product catalog
+<hr/>
 
-🛠️ Tech Stack
-
-Backend: Spring Boot, Spring MVC, Spring Data JPA
-
-Frontend: JSP, JSTL, CSS
-
-Database: H2 (in-memory, auto-configured)
-
-Build Tool: Maven
-
-
-⚙️ Installation & Setup
-
-Clone the repository
-
-git clone https://github.com/your-username/SpringCart.git
-cd SpringCart
-
-
-Build the project using Maven
-
-mvn clean install
-
-
-Run the application
-
-mvn spring-boot:run
-
-
-Access the app
-
-Open browser → http://localhost:8080
-
-H2 Console → http://localhost:8080/h2-console
-
-JDBC URL: jdbc:h2:mem:testdb
-
-Username: sa
-
-Password: (leave blank)
-
-
-
-
-📂 Project Structure
+<h2>📂 Project Structure</h2>
+<pre>
 SpringCart/
 │── src/main/java/com/springcart
 │   ├── controller      # Controllers
@@ -87,34 +88,33 @@ SpringCart/
 │   └── static/css/style.css
 │
 │── pom.xml
-│── README.md
+│── README.html
+</pre>
 
-📸 Screenshots
+<hr/>
 
-🔑 Login Page
+<h2>🚀 Future Enhancements</h2>
+<ul>
+  <li>Shopping Cart & Checkout</li>
+  <li>Payment Gateway Integration</li>
+  <li>JWT Authentication</li>
+  <li>REST API for Mobile Clients</li>
+</ul>
 
-📝 Register Page
+<hr/>
 
-📦 Product & Category Management
+<h2>🤝 Contributing</h2>
+<ol>
+  <li>Fork the repo</li>
+  <li>Create your feature branch (<code>git checkout -b feature/new-feature</code>)</li>
+  <li>Commit changes (<code>git commit -m "Add new feature"</code>)</li>
+  <li>Push to branch (<code>git push origin feature/new-feature</code>)</li>
+  <li>Open a Pull Request</li>
+</ol>
 
-🚀 Future Enhancements
+<hr/>
 
-Shopping Cart & Checkout
-
-Payment Gateway Integration
-
-JWT Authentication
-
-REST API for Mobile Clients
-
-🤝 Contributing
-
-Fork the repo
-
-Create your feature branch (git checkout -b feature/new-feature)
-
-Commit changes (git commit -m "Add new feature")
-
-Push to branch (git push origin feature/new-feature)
-
-Open a Pull Request
+<h2>📜 License</h2>
+<p>
+  This project is licensed under the <b>MIT License</b>.
+</p>
